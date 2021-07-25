@@ -1,0 +1,10 @@
+.post_wrapper{
+    display: grid;
+    place-items: center;
+    min-height: 90vh;
+}
+
+.Myfont{
+    font-size: xx-large;
+    color: rgba(214, 23, 173, 0.849);
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Flask POST</title>
+	<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}"> -->
+	<!-- <link rel="stylesheet" href="{{ url_for('static', filename='D:\Study\Flask\flask-POST\static\css')}}"> -->
+	<link rel="stylesheet" href="../static/css/style.css">
+</head>
+
+<body>
+	<div class="post_wrapper">
+		<form action="/post" method="post">
+		​	<p class="Myfont">이름 : <input type="text" id="input" name="input"></p>
+			<p>이름을 입력하고 제출하세요. <input type="submit" value="제출" onclick="alert('제출 완료!')" /></p>
+		</form>
+	</div>
+</body>
+</html>
