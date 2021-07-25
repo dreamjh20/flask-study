@@ -8,8 +8,8 @@ def hello():
 @app.route("/post",methods=['POST'])
 def post():
 	value = request.form['input']
-	msg = "%s 어서와~" %value
+	msg = "%s 어서 와~" %value
 	return render_template('welcome.html', value = msg)
 
 if __name__ == "__main__":
-		app.run(host='10.156.146.106')
+		app.run()
