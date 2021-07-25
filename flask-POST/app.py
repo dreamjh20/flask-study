@@ -25,4 +25,4 @@ def post():
 	return render_template('welcome.html', value = msg)
 
 if __name__ == "__main__":
-		app.run()
+		app.run(host='10.156.146.106')
