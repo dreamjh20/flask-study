@@ -9,7 +9,8 @@ def hello():
 def post():
 	value = request.form['input']
 	msg = "%s 어서 와~" %value
+	print(value)
 	return render_template('welcome.html', value = msg)
 
 if __name__ == "__main__":
-		app.run()
+		app.run(host='192.168.137.241')
