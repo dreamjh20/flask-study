@@ -1,11 +1,14 @@
 .input_wrapper{
+    padding: 100px;
     display: grid;
     place-items: center;
 }
-#text_box{
+
+.text_box{
     text-align: center;
     font-style: italic;
 }
+
 .back_color{
     background: linear-gradient(to right, blue, pink);
 }
