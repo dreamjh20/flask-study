@@ -8,7 +8,7 @@ app = Flask(__name__)
 def Input():
 	return render_template('index.html')
 
-@app.route("/succeed", methods=['POST'])
+@app.route("/welcome", methods=['POST'])
 def Post():
     name = request.form['name']
     nickname = request.form['nickname']
@@ -17,6 +17,7 @@ def Post():
     cur = conn.cursor()
     cur.execute("CREATE TABLE IF NOT EXISTS users (name text, nickname text)")
     cur.execute("INSERT INTO users VALUES(?, ?)", (name, nickname))
+    return render_template('welcome.html', value = nickname)
 
 if __name__ == "__main__":
     app.run()
