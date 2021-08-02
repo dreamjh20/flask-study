@@ -7,5 +7,5 @@
     font-style: italic;
 }
 .back_color{
-    background-color: yellow;
+    background: linear-gradient(to right, blue, pink);
 }
