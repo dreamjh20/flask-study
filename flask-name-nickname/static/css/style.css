@@ -1,0 +1,11 @@
+.input_wrapper{
+    display: grid;
+    place-items: center;
+}
+#text_box{
+    text-align: center;
+    font-style: italic;
+}
+.back_color{
+    background-color: yellow;
+}

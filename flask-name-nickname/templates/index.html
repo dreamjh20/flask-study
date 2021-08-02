@@ -7,7 +7,17 @@
     <title>Nicknames</title>
     <link rel="stylesheet" href="../static/css/style.css">
 </head>
-<body>
-    
+<body class="back_color">
+    <form action="/main" method="post">
+        <div class="input_wrapper">
+            <h1>NICKNAME</h1>
+            <input type="text" id="text_box" placeholder="NAME">
+            <br>
+            <input type="text" id="text_box" placeholder="NICKNAME">
+            <br>
+            <button type="submit" formmethod="POST" onclick="alert('submitted')">SUBMIT</button>
+        </div>
+    </form>
 </body>
+
 </html>
