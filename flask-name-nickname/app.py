@@ -17,7 +17,11 @@ def Post():
     cur = conn.cursor()
     cur.execute("CREATE TABLE IF NOT EXISTS users (name text, nickname text)")
     cur.execute("INSERT INTO users VALUES(?, ?)", (name, nickname))
-    return render_template('welcome.html', value1 = name, value2 = nickname)
+    cur.execute("SELECT * FROM users")
+    for row in cur.fetchall():
+        print(row)
+    nickname_list = cur.fetchall()
+    return render_template('welcome.html', value1 = name, value2 = nickname_list)
 
 if __name__ == "__main__":
     app.run()

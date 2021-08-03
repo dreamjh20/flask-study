@@ -1,3 +1,3 @@
 function func(){
-    console.log(Scceed)
+    console.log("--------")
 } 
