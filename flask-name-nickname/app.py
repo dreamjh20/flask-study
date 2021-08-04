@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def Input():
-	return render_template('index.html')
+	return render_template('index.html')    
 
 @app.route("/welcome", methods=['POST'])
 def Post():
@@ -38,14 +38,16 @@ def Result():
     result_nickname = cur.fetchone()
     print(result_nickname)
     print(type(result_nickname))
+    if result_nickname == None:
+        name_nickname = "No nickname yet."
+    else:
+        result_nickname = str(result_nickname)
+        result_nickname = result_nickname[2:-3]
+        print(result_nickname)
+        name_nickname = search_name + ' IS ' + result_nickname
     print("--------------------")
-    result_nickname = str(result_nickname)
-    result_nickname = result_nickname[2:-3]
-    print(result_nickname)
-    name_nickname = search_name + ' IS ' + result_nickname
     conn.close()
     return render_template('search.html', value = name_nickname)
-
 
 if __name__ == "__main__":
     app.run()
