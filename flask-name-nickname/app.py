@@ -21,8 +21,10 @@ def Post():
     cur.execute("SELECT * FROM users")
     # for row in cur.fetchall():
     #     print(row)
-    nickname_list = cur.fetchall()
-    print(nickname_list)
+
+    # nickname_list = cur.fetchall()
+    # print(nickname_list)
+    conn.close()
     return render_template('welcome.html', value1 = name)
 
 @app.route("/result", methods=['POST'])
@@ -32,9 +34,10 @@ def Result():
     conn = sqlite3.connect("user.db", isolation_level=None)
     cur = conn.cursor()
     print("====================")
-    result_nickname = cur.execute("SELECT nickname FROM users WHERE users.name == ?", (search_name, ))
+    result_nickname = cur.execute("SELECT nickname FROM users WHERE users.name =='문준혁'")
     print(result_nickname)
     print("--------------------")
+    conn.close()
     return render_template('result.html', value = result_nickname)
 
 
