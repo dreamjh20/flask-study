@@ -24,5 +24,10 @@ def Post():
     print(nickname_list)
     return render_template('welcome.html', value1 = name)
 
+@app.route("/result", methods=['POST'])
+def Result():
+    print
+
+
 if __name__ == "__main__":
     app.run()

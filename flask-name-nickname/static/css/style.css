@@ -21,3 +21,7 @@
 .back_color{
     background: linear-gradient(to right, blue, pink);
 }
+
+#mouse_on{
+    cursor: pointer;
+}

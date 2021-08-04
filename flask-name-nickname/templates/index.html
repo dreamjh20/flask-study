@@ -15,14 +15,14 @@
             <br>
             <input type="text" id="text_box" name="nickname" placeholder="NICKNAME">
             <br>
-            <button type="submit" formmethod="POST" onclick="alert('submitted')">SUBMIT</button>
+            <button type="submit" id="mouse_on" formmethod="POST" onclick="alert('submitted')">SUBMIT</button>
         </div>
     </form>
-    <form method="GET">
+    <form action="/result" method="POST">
         <div class="search_wrapper">
             <input type="text" class="search_text" onKeyup="this.value=this.value.replace(/[0-9]/g, ''); " name="search_word" placeholder="SEARCH NICKNAME AS NAME">
             <br>
-            <button type="submit" formmethod="GET" >SEARCH</button>
+            <button type="submit" id="mouse_on" formmethod="POST" >SEARCH</button>
         </div>
     </form>
 </body>
