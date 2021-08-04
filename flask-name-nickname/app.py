@@ -1,5 +1,5 @@
 from os import name
-from re import search
+from re import A, search
 from flask import Flask, render_template, request
 import sqlite3
 
@@ -34,9 +34,14 @@ def Result():
     conn = sqlite3.connect("user.db", isolation_level=None)
     cur = conn.cursor()
     print("====================")
-    result_nickname = cur.execute("SELECT nickname FROM users WHERE users.name =='문준혁'")
+    result_nickname = cur.execute("SELECT nickname FROM users WHERE users.name ==?", (search_name, ))
+    result_nickname = cur.fetchone()
     print(result_nickname)
+    print(type(result_nickname))
     print("--------------------")
+    result_nickname = str(result_nickname)
+    print(result_nickname[2:-3])
+    result_nickname = result_nickname[2:-3]
     conn.close()
     return render_template('result.html', value = result_nickname)
 
