@@ -27,7 +27,7 @@ def Post():
     conn.close()
     return render_template('welcome.html', value1 = name)
 
-@app.route("/result", methods=['POST'])
+@app.route("/search", methods=['POST'])
 def Result():
     search_name = request.form['search_word']
     print(search_name)
@@ -40,10 +40,11 @@ def Result():
     print(type(result_nickname))
     print("--------------------")
     result_nickname = str(result_nickname)
-    print(result_nickname[2:-3])
     result_nickname = result_nickname[2:-3]
+    print(result_nickname)
+    name_nickname = search_name + ' IS ' + result_nickname
     conn.close()
-    return render_template('result.html', name = search_name, nickname = result_nickname)
+    return render_template('search.html', value = name_nickname)
 
 
 if __name__ == "__main__":
