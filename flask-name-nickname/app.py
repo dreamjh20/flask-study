@@ -1,4 +1,5 @@
 from os import name
+from re import search
 from flask import Flask, render_template, request
 import sqlite3
 
@@ -26,7 +27,15 @@ def Post():
 
 @app.route("/result", methods=['POST'])
 def Result():
-    print
+    search_name = request.form['search_word']
+    print(search_name)
+    conn = sqlite3.connect("user.db", isolation_level=None)
+    cur = conn.cursor()
+    print("====================")
+    result_nickname = cur.execute("SELECT nickname FROM users WHERE users.name == ?", (search_name, ))
+    print(result_nickname)
+    print("--------------------")
+    return render_template('result.html', value = result_nickname)
 
 
 if __name__ == "__main__":
