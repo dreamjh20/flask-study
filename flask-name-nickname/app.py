@@ -43,7 +43,7 @@ def Result():
     print(result_nickname[2:-3])
     result_nickname = result_nickname[2:-3]
     conn.close()
-    return render_template('result.html', value = result_nickname)
+    return render_template('result.html', name = search_name, nickname = result_nickname)
 
 
 if __name__ == "__main__":
