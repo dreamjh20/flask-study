@@ -10,12 +10,14 @@
 }
 
 .search_text{
-    min-width: 195px;
+    min-width: 350px;
+    font-size: x-large
 }
 #text_box{
-    min-width: 195px;
-    text-align: center;
-    font-style: italic;
+    min-width: 350px;
+    font-size: x-large
+    /* text-align: center; */
+    /* font-style: italic; */
 }
 
 .back_color{
