@@ -17,7 +17,16 @@ def Post():
     conn = sqlite3.connect("user.db", isolation_level=None)
     cur = conn.cursor()
     cur.execute("CREATE TABLE IF NOT EXISTS users (name text, nickname text)")
-    cur.execute("INSERT INTO users VALUES(?, ?)", (name, nickname))
+
+    name_exist = cur.execute("SELECT nickname FROM users WHERE users.name ==?", (name, ))
+    name_exist = cur.fetchone()
+    if name_exist == None:
+        cur.execute("INSERT INTO users VALUES(?, ?)", (name, nickname))
+        
+
+    else :
+        cur.execute("UPDATE users SET nickname = ? WHERE users.name == ?", (nickname, name))
+        print("UPDATE")
     conn.close()
     return render_template('welcome.html', value1 = name)
 
