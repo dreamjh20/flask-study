@@ -7,16 +7,18 @@
 .search_wrapper{
     display: grid;
     place-items: center;
+    text-align: center;
 }
 
-.search_text{
-    min-width: 350px;
-    font-size: x-large
+.search_text{  
+  min-width: 350px;
+  font-size: 150%;
+  text-align: center;
 }
 #text_box{
     min-width: 350px;
-    font-size: x-large
-    /* text-align: center; */
+    font-size: 150%;
+    text-align: center;
     /* font-style: italic; */
 }
 
