@@ -2,6 +2,7 @@ html {
     background: #1d1f20;
     margin:  0 4rem;
 }
+
 .header {
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 6rem;
@@ -23,6 +24,7 @@ html {
       -webkit-filter: hue-rotate(-360deg);
     }
 }
+
 .result_wrapper{
     max-width: 100%;
     height: auto;
