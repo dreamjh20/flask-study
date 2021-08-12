@@ -1,3 +1,3 @@
 # flask-study
 
-2021.07.14
+Micro Web Framework (MWF), Flask
