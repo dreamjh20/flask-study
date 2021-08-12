@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 conn = sqlite3.connect("user.db", isolation_level=None)
 cur = conn.cursor()
-cur.execute("CREATE TABLE IF NOT EXISTS users (id text, password text)")
+cur.execute("CREATE TABLE IF NOT EXISTS users (id text, password text, email text)")
 
 @app.route('/')
 def home_page():
@@ -24,7 +24,6 @@ def main_page():
     check = request.form['check']
 
     print(check)
-    print("\n")
 
     #Login
     if check == 'login':
@@ -32,13 +31,24 @@ def main_page():
         Pw = request.form['pw']
         print(Id, Pw)
 
+        PW = cur.execute("SELECT password FROM users WHERE users.id ==?", (Id, ))
+        PW = cur.fetchone()
+        PW = str(PW)
+        PW = PW[2:-3]
+        print(PW)
+        if Pw == PW:
+            print("SUCCEED")
+        else:
+            print("FAIL")
+
     #Signup
     else:
         Id=request.form['id']
         Pw = request.form['pw']
-        Email = request.form['email']
-        print(Id, Pw, Email)
+        print(Id, Pw)
+        #Exist
         
+        #Non Exist
     return render_template('result.html')
 
 @app.route('/signup')
