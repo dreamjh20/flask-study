@@ -3,18 +3,45 @@ import sqlite3
 
 app = Flask(__name__)
 
+conn = sqlite3.connect("user.db", isolation_level=None)
+cur = conn.cursor()
+cur.execute("CREATE TABLE IF NOT EXISTS users (id text, password text)")
+
 @app.route('/')
-def main_Page():
-    print("MAIN")
+def home_page():
+    print("HOME")
     return render_template('home.html')
 
-@app.route('/signin')
-def sign_in_Page():
-    return render_template('sign_in_page.html')
+@app.route('/login')
+def login_page():
+    return render_template('login.html')
+
+@app.route('/result', methods=['POST'])
+def main_page():
+    conn = sqlite3.connect("user.db", isolation_level=None)
+    cur = conn.cursor()
+    
+    check = request.form['check']
+
+    print(check)
+    print("\n")
+
+
+    if check == 'login':
+        Id=request.form['id']
+        Pw = request.form['pw']
+        print(Id, Pw)
+    else:
+        Id=request.form['id']
+        Pw = request.form['pw']
+        Email = request.form['email']
+        print(Id, Pw, Email)
+
+    return render_template('result.html')
 
 @app.route('/signup')
-def sign_up_Page():
-    return render_template('sign_up_page.html')
+def signup_page():
+    return render_template('signup.html')
 
 if __name__ == "__main__":
     app.run()
