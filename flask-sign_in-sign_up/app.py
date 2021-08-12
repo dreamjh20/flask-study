@@ -26,17 +26,19 @@ def main_page():
     print(check)
     print("\n")
 
-
+    #Login
     if check == 'login':
         Id=request.form['id']
         Pw = request.form['pw']
         print(Id, Pw)
+
+    #Signup
     else:
         Id=request.form['id']
         Pw = request.form['pw']
         Email = request.form['email']
         print(Id, Pw, Email)
-
+        
     return render_template('result.html')
 
 @app.route('/signup')
