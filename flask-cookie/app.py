@@ -22,6 +22,6 @@ def setcookie():
 def getcookie():
     Myname = request.cookies.get('userName')
     return '<h1>' + Myname + '</h1>'
-    
+
 if __name__ == "__main__":
 		app.run()
