@@ -13,4 +13,5 @@
     transform: translate(-50%, -50%);
     border: solid;
     border-color: gray;
+    border-radius: 5px 5px 5px 5px;
 }

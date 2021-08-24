@@ -14,14 +14,18 @@ def setcookie():
     user_name = str(user_name)
     Myresponse = make_response(user_name)
     print(Myresponse)
-    Myresponse.set_cookie('userName', user_name)
+    Myresponse.set_cookie('UserName', user_name)
     print(user_name)
     return render_template('setcookie.html', value = Myresponse)
 
 @app.route('/getcookie')
 def getcookie():
-    Myname = request.cookies.get('userName')
-    return '<h1>' + Myname + '</h1>'
+    print("1111111111111111111111111")
+    MyName = request.cookies.get('UserName')
+    print('2222222222222222222222222')
+    print(MyName)
+
+    return '<h1>' + MyName + '</h1>'
 
 if __name__ == "__main__":
 		app.run()
