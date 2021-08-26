@@ -12,17 +12,15 @@ def setcookie():
         user_name = request.form['name']
 
     user_name = str(user_name)
-    Myresponse = make_response(user_name)
+    Myresponse = make_response(render_template('setcookie.html'))
     print(Myresponse)
     Myresponse.set_cookie('UserName', user_name)
     print(user_name)
-    return render_template('setcookie.html', value = Myresponse)
+    return Myresponse
 
 @app.route('/getcookie')
 def getcookie():
-    print("1111111111111111111111111")
     MyName = request.cookies.get('UserName')
-    print('2222222222222222222222222')
     print(MyName)
 
     return '<h1>' + MyName + '</h1>'
