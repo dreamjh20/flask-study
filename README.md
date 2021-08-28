@@ -1,3 +1,3 @@
 # flask-study
 
-Micro Web Framework (MWF), Flask
+Research about Micro Web Framework (MWF), Flask
