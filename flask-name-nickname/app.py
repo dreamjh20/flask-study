@@ -21,7 +21,8 @@ def Post():
     name_exist = cur.execute("SELECT nickname FROM users WHERE users.name ==?", (name, ))
     name_exist = cur.fetchone()
     if name_exist == None:
-        cur.execute("INSERT INTO users VALUES(?, ?)", (name, nickname))    
+        cur.execute("INSERT INTO users VALUES(?, ?)", (name, nickname))
+        
 
     else :
         cur.execute("UPDATE users SET nickname = ? WHERE users.name == ?", (nickname, name))
