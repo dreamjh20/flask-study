@@ -6,8 +6,6 @@ app = Flask(__name__)
 def moon():
     return jsonify({"message":"i'm moon"})
 
-
-
 @app.route('/language/<language>')
 def environments(language):
     return jsonify({"language":language})
