@@ -19,7 +19,6 @@ def get_info():
         user_name=  request.args.get("username")
     print(user_name)
     url=f'https://api.github.com/users/{user_name}'
-    url2 = f'https://api.github.com/repos/dreamjh20/embedded/commits'
     
     response = requests.get(url).json()
     print(response)
@@ -32,14 +31,20 @@ def get_info():
 
 @app.route('/firstcommit', methods=['GET'])
 def first_commit():
+    
     if request.args.get("username") is not None:
         user_name=  request.args.get("username")
     if request.args.get("repository") is not None:
         user_repository=  request.args.get("repository")
+    
+    url = f'https://api.github.com/repos/{user_name}/{user_repository}/commits'
+    response = requests.get(url).json()
+    print('111111')
+    print('222222')
+
     print(user_name)
     print(user_repository)
     return "FC"
-
 
 if __name__ == "__main__":
     app.run()
