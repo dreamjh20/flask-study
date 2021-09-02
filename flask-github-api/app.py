@@ -19,7 +19,7 @@ def get_info():
         user_name=  request.args.get("username")
     print(user_name)
     url=f'https://api.github.com/users/{user_name}'
-    
+    commit_url = f'https://github-readme-stats.vercel.app/api?username={user_name}'
     response = requests.get(url).json()
     print(response)
     follower = response['followers']
