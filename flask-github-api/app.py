@@ -50,8 +50,8 @@ def first_commit():
     
     url = f'https://api.github.com/repos/{user_name}/{user_repository}/commits'
     response = requests.get(url).json()
-    print('111111')
-    print('222222')
+    print('1111111')
+    print('2222222')
 
     print(user_name)
     print(user_repository)
