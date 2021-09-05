@@ -37,13 +37,13 @@ def get_info():
     # html = response.text
     # bsObject = BeautifulSoup(html, 'html.parser')
 
-    print('------COMMIT__1------')
-    res = requests.get(commit_url)
-    res.raise_for_status()
-    bsObject = BeautifulSoup(commit_url, "html.parser")
-    print('------COMMIT__2------')
-    print(bsObject.text)
-    print(len(bsObject.find_all(class_="stat")))
+    # print('------COMMIT__1------')
+    # res = requests.get(commit_url)
+    # res.raise_for_status()
+    # bsObject = BeautifulSoup(commit_url, "html.parser")
+    # print('------COMMIT__2------')
+    # print(bsObject.text)
+    # print(len(bsObject.find_all(class_="stat")))
 
     return 'INFO'
 
