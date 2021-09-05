@@ -18,7 +18,7 @@ def get_info():
         user_name=  request.args.get("username")
     print(user_name)
     url=f'https://api.github.com/users/{user_name}'
-    commit_url = f'https://github-readme-stats.vercel.app/api?username={user_name}'
+
     print(commit_url)
     response = requests.get(url).json()
     print(response)
@@ -27,26 +27,7 @@ def get_info():
     following = response['following']
     print(following)
 
-    # html = urlopen(commit_url)
-    # print('11111')
-    # bsObject = BeautifulSoup(html, "html.parser")
-    # print('22222')
-    # commit_count = bsObject.select('class="stat"')
-    # print(commit_count)
-
-    # html = response.text
-    # bsObject = BeautifulSoup(html, 'html.parser')
-
-    # print('------COMMIT__1------')
-    # res = requests.get(commit_url)
-    # res.raise_for_status()
-    # bsObject = BeautifulSoup(commit_url, "html.parser")
-    # print('------COMMIT__2------')
-    # print(bsObject.text)
-    # print(len(bsObject.find_all(class_="stat")))
-
     return 'INFO'
-
 
 @app.route('/firstcommit', methods=['GET'])
 def first_commit():
