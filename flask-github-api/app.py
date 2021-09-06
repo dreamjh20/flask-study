@@ -31,7 +31,10 @@ def get_info():
     bsObject = BeautifulSoup(html, "html.parser")
 
     print(bsObject.head.title)
-
+    commit_count = bsObject.find('h2',class_='f4 text-normal mb-2')
+    commit = commit_count.get_text()
+    commit = commit[0:-50]
+    print(commit)
     return 'INFO'
 
 @app.route('/firstcommit', methods=['GET'])
