@@ -18,14 +18,19 @@ def get_info():
         user_name=  request.args.get("username")
     print(user_name)
     url=f'https://api.github.com/users/{user_name}'
+    github_url = f'https://github.com/{user_name}'
 
-    print(commit_url)
     response = requests.get(url).json()
     print(response)
     follower = response['followers']
     print(follower)
     following = response['following']
     print(following)
+
+    html = urlopen(github_url)
+    bsObject = BeautifulSoup(html, "html.parser")
+
+    print(bsObject.head.title)
 
     return 'INFO'
 
