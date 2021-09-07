@@ -27,6 +27,8 @@ def get_info():
     print(follower)
     following = response['following']
     print(following)
+    git_birthday = response['created_at']
+    print(git_birthday)
 
     html = urlopen(github_url)
     bsObject = BeautifulSoup(html, "html.parser")
@@ -35,6 +37,8 @@ def get_info():
     commit_count = bsObject.find('h2',class_='f4 text-normal mb-2')
     commit = commit_count.get_text()
     commit = commit[0:-50]
+    avatar = bsObject.find('img',class_="avatar avatar-user width-full border color-bg-primary")
+    print(avatar)
     print(commit)
 
     profile_image = bsObject.find('img', class_='avatar avatar-user width-full border color-bg-primary')
@@ -51,8 +55,9 @@ def first_commit():
     
     url = f'https://api.github.com/repos/{user_name}/{user_repository}/commits?per_page=1'
     print('1111111')
+    
     response = requests.get(url).json()
-    print(response)
+    print(response) 
     
     print('2222222')
 
