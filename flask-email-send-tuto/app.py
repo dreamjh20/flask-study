@@ -1,4 +1,5 @@
-from flask import Flask
+from os import name
+from flask import Flask, render_template, request
 from flask_mail import Mail, Message
 
 app = Flask(__name__)
@@ -14,11 +15,22 @@ mail = Mail(app)
 
 @app.route('/')
 def index() :
+    return render_template('home.html')
+
+@app.route('/send', methods=['POST'])
+def send_email():
+    name = request.form['Receiver']
+    title = request.form['Head']
+    message = request.form['Body']
+    print(name)
+    print(title)
+    print(message)
+    
     print('1111')
-    msg = Message('Welcome MungshilCloud', sender='mungshilcloud@gmail.com', recipients=['msj00130@gmail.com'])
+    msg = Message(title, sender='mungshilcloud@gmail.com', recipients=[name])
     print('2222')
     print(msg)
-    msg.body = '天下無敵 MungshilCloud'
+    msg.body = message
     print('3333')
     mail.send(msg)
     print('4444')
