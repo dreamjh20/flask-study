@@ -1,7 +1,5 @@
 from flask import Flask, render_template, request
 from flask_mail import Mail, Message
-from email.message import EmailMessage
-import imghdr
 import random
 
 app = Flask(__name__)
@@ -17,31 +15,33 @@ mail = Mail(app)
 
 @app.route('/', methods=['POST'])
 def send_email():
+
+    rand_code = random.randrange(100000, 999999)
+    rand_code = str(rand_code)
     # name = request.form['Receiver']
     name = 'ddongungga@gmail.com'
-    title = 'Mungshil Cloud Email Verification'
+    title = 'Mungshil Cloud Email Verification Code: {}'.format(rand_code)
     
     # msg = Message(title, sender='mungshilcloud@gmail.com', recipients=[name])
     msg = Message(title, sender='mungshilcloud@gmail.com', recipients=[name])
-    # msg.html="""
-    #             <img src="https://avatars.githubusercontent.com/u/86836065?s=40&v=4">
-    #          """
 
-    with open('ms_icon.jpg') as f:
-        file_data = f.read()
-        file_type = imghdr.what(f.name)
-        file_name = f.name
+
+    # print('111111111111111111111')
+    
+    # msg.body = rand_code
+    # msg.extra_headers(rand_code)
+
+    msg.html="""
+                <img src="https://avatars.githubusercontent.com/u/86836065?s=40&v=4">
+                <h1>Welcome<h1>
+             """
 
     # msg.html = render_template('test.html')
     # print(msg)
 
-    msg.add_attatchment(file_data, main_type="image", sub_type=file_type, filename=file_name)
 
-    print('111111111111111111111')
-    # rand_code = random.randrange(100000, 999999)
-    # rand_code = str(rand_code)
-    # msg.body = rand_code
-    # print(rand_code)
+    
+    print(rand_code)
     print('222222222222222222222')
     mail.send(msg) 
     print('333333333333333333333')
