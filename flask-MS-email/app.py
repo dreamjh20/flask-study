@@ -19,7 +19,7 @@ def send_email():
     rand_code = random.randrange(100000, 999999)
     rand_code = str(rand_code)
     # name = request.form['Receiver']
-    name = 'ddongungga@gmail.com'
+    name = '201101kkj@dsm.hs.kr'
     title = 'Mungshil Cloud Email Verification Code: {}'.format(rand_code)
     
     # msg = Message(title, sender='mungshilcloud@gmail.com', recipients=[name])
@@ -33,7 +33,7 @@ def send_email():
 
     msg.html="""
                 <img src="https://avatars.githubusercontent.com/u/86836065?s=40&v=4">
-                <h1>Welcome<h1>
+                <h1>Welcome!<h1>
              """
 
     # msg.html = render_template('test.html')
