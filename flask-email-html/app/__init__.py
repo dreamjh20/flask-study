@@ -1,10 +1,6 @@
-# app init
-
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine
-
-import config
 
 def html_email_blueprint(app : Flask):
     from .view.email import email_blueprint
@@ -13,7 +9,7 @@ def html_email_blueprint(app : Flask):
 
 def create_app() -> Flask:
     app = Flask(__name__)
-
+    
     html_email_blueprint(app)
 
     return app
