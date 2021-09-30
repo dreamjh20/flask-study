@@ -1,8 +1,11 @@
+import re
 from flask_restful import Resource
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, json
 
 class SendEmail(Resource):
     def post(self):
-        print("EMAIL")
-        
-        return jsonify({"message":"succeed"})
+
+        j_son= request.get_json()
+        print(request.is_json)
+
+        return 'json'
