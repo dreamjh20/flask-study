@@ -1,3 +1,3 @@
 # Recorded Welcome!
 
-instead of auth code
+instead of certif code
