@@ -16,7 +16,7 @@ def home():
 def upload_file():
     if request.method == 'POST':
         f = request.files['myfile']  #파일 받아오기
-        f.save(secure_filename(f.filename)) #암호화
+        f.save('./static/image/' + secure_filename(f.filename)) #파일 경로 설정 + 암호화
         #print(f.filename) #파일 이름 출력
         return_str = f.filename + " SUCCEED"
         return return_str
