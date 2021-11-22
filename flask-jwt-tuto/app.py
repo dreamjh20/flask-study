@@ -8,6 +8,10 @@ app.config.update(  #Key를 환경 변수에 등록
     JWT_SECRET_KEY = "Moontong"
 )
 
+#임시 admin 계정 생성
+admin_id = "admin"
+admin_pw = "1234"
+
 jwt = JWTManager(app) #jwt을 flask 앱에 등록
 
 @app.route("/")
