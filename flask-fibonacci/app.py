@@ -10,11 +10,30 @@ def home():
 
 @app.route("/fibo", methods=['GET'])
 def get_fibo():
-    return "function"
+    started_time = t.time()
+    for i in Fibo.func_fibo(5000):
+        pass
+
+    finished_time = t.time()
+    return_time = finished_time - started_time
+    print(f"Return Time = {return_time}")
+
+    return_time = str(return_time)
+    return return_time
 
 @app.route("/fibo", methods=['POST'])
 def post_fibo():
-    return "generator"
+    
+    started_time = t.time()
+    for i in Fibo.generator_fibo(500000):
+        pass
+
+    finished_time = t.time()
+    return_time = finished_time - started_time
+    print(f"Return Time = {return_time}")
+
+    return_time = str(return_time)
+    return return_time
 
 if __name__ == '__main__':
     app.run()
