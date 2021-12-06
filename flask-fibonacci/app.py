@@ -6,12 +6,13 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template('')
+    return render_template('home.html')
 
 @app.route("/fibo", methods=['GET'])
 def get_fibo():
     started_time = t.time()
-    for i in Fibo.func_fibo(5000):
+
+    for i in Fibo.func_fibo(500000):
         pass
 
     finished_time = t.time()
@@ -25,6 +26,7 @@ def get_fibo():
 def post_fibo():
     
     started_time = t.time()
+
     for i in Fibo.generator_fibo(500000):
         pass
 
