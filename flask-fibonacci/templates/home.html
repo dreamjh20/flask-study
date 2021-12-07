@@ -5,16 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="../static/js/main.js"></script>
 </head>
 <body>
-
-    <form action="/fibo" method="get">
-        <button type="submit">Func</button>
-    </form>
-
-    <form action="/fibo" method="post">
-        <button type="submit">Generator</button>
-    </form>
-
+    <h1>Fibonacci Return time</h1>
+    <div>
+        <h2>Function</h2>
+        <form action="/fibo" method="get">
+            <input type="number" name="num" id="fun_input" min="0">
+            <br>
+            <button type="submit">run</button>
+        </form>
+        <h2>Generator</h2>
+        <form action="/fibo" method="post">
+            <input type="number" name="num" id="gen_input" min="0">
+            <br>
+            <button type="submit">run</button>
+        </form>
+    </div>
 </body>
 </html>
