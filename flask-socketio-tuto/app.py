@@ -10,4 +10,4 @@ def message(msg):
     send(msg, broadcast=True)
 
 if __name__ == '__main__':
-    socketIO.app.run(debug=True, host='0.0.0.0', port=5000)
+    socketIO.run(app)
