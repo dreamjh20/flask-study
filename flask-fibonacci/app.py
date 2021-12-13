@@ -1,4 +1,3 @@
-from re import DEBUG
 from flask import Flask, request, jsonify, render_template
 import time as t
 from fibo import Fibo
